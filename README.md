@@ -64,14 +64,19 @@ guardian install fastapi --index-url https://pypi.org/simple
 guardian install requests --json --yes
 ```
 
-## Telemetry setup (optional)
+## Telemetry setup (optional, for repo owner/operator)
+Telemetry is disabled by default.
+
+Use this only if you run your own telemetry backend and want usage events from deployments you control.
 ```bash
 export GUARDIAN_TELEMETRY=1
-export GUARDIAN_TELEMETRY_ENDPOINT="https://your-domain.com/guardian/events"
-export GUARDIAN_TELEMETRY_USER_ID="customer-or-tenant-id"
-# optional bearer token
-export GUARDIAN_TELEMETRY_TOKEN="your-ingest-token"
+export GUARDIAN_TELEMETRY_ENDPOINT="https://<your-backend>/guardian/events"
+export GUARDIAN_TELEMETRY_USER_ID="<your-tenant-or-customer-id>"
+# optional bearer token for your ingest API
+export GUARDIAN_TELEMETRY_TOKEN="<your-ingest-token>"
 ```
+
+For open-source users who do not run your backend: keep telemetry off (default) or leave these unset.
 
 Event payload includes:
 - command, target, package_name
