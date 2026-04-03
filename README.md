@@ -46,13 +46,13 @@ Package ecosystems are a common attack path. `pip-guardian` checks package metad
 - Primary path: `~/.pip_guardian/guardian.log`
 - Fallback path (if home not writable): `./.pip_guardian/guardian.log`
 
-### 6) Optional telemetry (explicit opt-in)
-- Disabled by default.
-- When enabled, sends minimal usage event payloads to your endpoint.
-- Telemetry failures never block installs.
-
 ## Installation
+Not published on PyPI yet.
+
+Install from source:
 ```bash
+git clone https://github.com/AnantDhavale/pip-guardian.git
+cd pip-guardian
 pip install .
 ```
 
@@ -63,27 +63,6 @@ guardian install litellm==1.82.8
 guardian install fastapi --index-url https://pypi.org/simple
 guardian install requests --json --yes
 ```
-
-## Telemetry setup (optional, for repo owner/operator)
-Telemetry is disabled by default.
-
-Use this only if you run your own telemetry backend and want usage events from deployments you control.
-```bash
-export GUARDIAN_TELEMETRY=1
-export GUARDIAN_TELEMETRY_ENDPOINT="https://<your-backend>/guardian/events"
-export GUARDIAN_TELEMETRY_USER_ID="<your-tenant-or-customer-id>"
-# optional bearer token for your ingest API
-export GUARDIAN_TELEMETRY_TOKEN="<your-ingest-token>"
-```
-
-For open-source users who do not run your backend: keep telemetry off (default) or leave these unset.
-
-Event payload includes:
-- command, target, package_name
-- decision, installed, exit_code, json_mode
-- guardian/python/platform version
-- anonymous `host_hash` and persistent local `install_id`
-- optional `GUARDIAN_TELEMETRY_USER_ID`
 
 ## Policy and IOC files
 - `policies/config.yaml`:
@@ -99,7 +78,6 @@ Event payload includes:
 - `guardian/policy_engine.py` - risk decision logic
 - `guardian/scanner.py` - deep artifact scanning
 - `guardian/pypi_checker.py` - PyPI metadata collection
-- `guardian/telemetry.py` - optional usage telemetry
 - `guardian/logger.py` - local decision logging
 
 ## Notes
