@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "litellm": [
+      "1.82.7",
+      "1.82.8"
+    ]
+  },
+  "maintainers": []
+}
