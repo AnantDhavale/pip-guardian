@@ -47,13 +47,21 @@ Package ecosystems are a common attack path. `pip-guardian` checks package metad
 - Fallback path (if home not writable): `./.pip_guardian/guardian.log`
 
 ## Installation
-Not published on PyPI yet.
+Install from PyPI:
+```bash
+python -m pip install pip-guardian
+```
 
-Install from source:
+Upgrade:
+```bash
+python -m pip install --upgrade pip-guardian
+```
+
+Install from source (development):
 ```bash
 git clone https://github.com/AnantDhavale/pip-guardian.git
 cd pip-guardian
-pip install .
+python -m pip install .
 ```
 
 ## Usage
