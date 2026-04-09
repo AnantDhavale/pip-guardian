@@ -95,3 +95,12 @@ guardian install requests --json --yes
 ## Author
 Anant Dhavale  
 anantdhavale@gmail.com
+
+## Reach out
+
+If you are using it and finding it useful, please drop me a note. I would appreciate that !
+anantdhavale@gmail.com
+
+Check out homer-core. It's the governance middle-ware your enteprise needs, reach out for a free POC.
+wwww.homersemantics.com
+info@homersemantics.com
