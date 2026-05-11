@@ -57,6 +57,23 @@ Upgrade:
 python -m pip install --upgrade pip-guardian
 ```
 
+## CLI entrypoint fix
+Earlier releases had CLI entrypoint issues for some users.
+This is now fixed.
+
+Upgrade and try again:
+```bash
+python -m pip install --upgrade pip-guardian
+pip-guardian install requests
+```
+
+Alternative commands that now work:
+```bash
+pip_guardian install requests
+guardian install requests
+python -m guardian install requests
+```
+
 Install from source (development):
 ```bash
 git clone https://github.com/AnantDhavale/pip-guardian.git
