@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="pip-guardian",
-    version="1.0.0",
+    version="1.0.1",
     packages=find_packages(),
     install_requires=[
         "requests",
@@ -13,6 +13,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
+            "pip-guardian=guardian.cli:main",
+            "pip_guardian=guardian.cli:main",
             "guardian=guardian.cli:main",
         ],
     },
